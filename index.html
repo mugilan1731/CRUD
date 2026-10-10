@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MagnusClone - Student CRUD</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="topbar">
+        <h2>MAGNUS</h2>
+        <span>Student Management</span>
+    </header>
+
+    <main class="container">
+        <h1>Student CRUD Operations</h1>
+        <p class="subtitle">Create, view, update and delete student records.</p>
+
+        <section class="card">
+            <h2 id="formTitle">Add Student</h2>
+
+            <form id="studentForm">
+                <input type="hidden" id="studentId">
+
+                <div class="form-group">
+                    <label for="studentName">Student Name</label>
+                    <input type="text" id="studentName"
+                           placeholder="Enter student name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="studentEmail">Email</label>
+                    <input type="email" id="studentEmail"
+                           placeholder="Enter email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="studentCourse">Course</label>
+                    <input type="text" id="studentCourse"
+                           placeholder="Enter course" required>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" id="saveButton">Add Student</button>
+                    <button type="button" id="cancelButton" class="secondary"
+                            hidden>Cancel Edit</button>
+                </div>
+            </form>
+            <p id="message" role="status"></p>
+        </section>
+
+        <section class="card">
+            <div class="table-heading">
+                <h2>Student Records</h2>
+                <span id="recordCount">Total: 0</span>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Course</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentTableBody">
+                        <!-- Records appear here -->
+                    </tbody>
+                </table>
+            </div>
+
+            <p id="emptyMessage">No student records found. Add your first student.</p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
